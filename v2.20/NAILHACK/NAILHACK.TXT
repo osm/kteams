@@ -1,0 +1,19 @@
+QuakeWorld server nail hack
+- allows Qizmo to compress nail data 3 times tighter
+- in most cases uses less bandwidth even without Qizmo
+- nails fly around smoother and point to the right direction
+- sng and ng nails look different, like in regular Quake
+
+For maximum effect set sv_mintic to 0.014 in qwsv console.
+(sv_mintic controls how often qwsv updates non-player entities
+(rockets, nails, everything else that moves). The default is 0.03,
+which amounts to 33fps (1/0.03s). 0.014 (72fps) will get you updated
+entities for every qwcl frame -> as smooth as regular Quake. Note
+that upping the server fps also ups the cpu load.)
+
+Usage: nailhack qwsvfilename
+
+Should work on any qwsv executable.
+Rerun to restore original.
+
+Author: Juha Kujala <jmkujala@cc.jyu.fi>

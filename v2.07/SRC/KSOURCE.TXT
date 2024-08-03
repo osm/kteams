@@ -1,0 +1,13 @@
+KOMBAT TEAMS SOURCECODE is a modified version of the qw2.10 source by
+kemiKal_sWeMoB and Fang with some M4 macro code by Axu^FAQ^.
+It is only meant to be functional and not to revolutionize the world of
+programming and is a bit messy at best.
+The FASTQCC compiler is the only one guaranteed to work with this code.
+You can find it on ftp.cdrom.com/pub/idgames2/ somewhere..
+If you're thinking of editing this patch, read the "kombat.txt" that
+should be enclosed in the package...
+
+
+thanks,
+
+kK

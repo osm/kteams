@@ -1,0 +1,19 @@
+// Put these lines into your idda.cfg file.
+
+QW_y_kills_x            1               "% was lead poisoned by %"
+QW_y_kills_x            2               "% ate 8 loads of %'s buckshot"
+QW_y_kills_x            6               "% was body pierced by %"
+QW_y_kills_x            7               "% was ventilated by %"
+QW_y_kills_x            7               "% was perforated by %"
+QW_y_kills_x            7               "% was straw-cuttered by %"
+QW_y_kills_x            8               "% gets a natural disaster from %"
+QW_y_kills_x            8               "% drains %'s batteries"
+
+QW_selfkill             0               "% discovers blast radius"
+QW_selfkill             8               "% heats up the water"
+QW_selfkill             8               "% electrocutes herself."
+
+QW_teamkill             0               "% checks her glasses"
+
+QW_death                4               "% fell to her death"
+QW_death                4               "% cratered"

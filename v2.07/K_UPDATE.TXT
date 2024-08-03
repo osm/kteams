@@ -1,0 +1,30 @@
+KOMBAT TEAMS v2.07 updates
+--------------------------
+* /scores command added for spectators
+* if a match is a 2 teams match with more than 2 people involved from the start, KT now tells you who
+  is leading by how much @ the minute report.
+* changed the functionality of /scores
+* avoid * 2 turneded into "KT SpawnSafety" (see technical notes)
+* new command: /pickup (see kombat.txt)
+* doubled the number of gameticks (now 120) of respawn-frag safety after you're
+  newly spawned in Kombat Teams spawnmode
+* /forcestart can now start matches with only one player (fun? :)) again
+* added separators after the listings of /who /whonot /whoskin
+* changed functionality of the idlebot (see kombat.txt)
+* optimized/changed some code for match-start
+* teams printout on /ready
+* players that changes teams during game only gets kicked now (aren't rewarded -2 frags anymore)
+* enhanced spawnfrags avoidance on mapentry (not just normal qw spawns)
+* fixed the look of the timer on /scores (when only seconds remain)
+* added an alias: /notready (/break)
+* /reset now performs an "exec configs/reset.cfg" on the server instead of using the old KT defaults
+* /reset if you are an admin tries to "exec configs/<yourteam>.cfg" on the server. if you currently are in
+  team "" (teamless) then it will "exec configs/reset.cfg" instead. this is useful for leagues where different
+  teams uses different settings etc.
+* performs amount of players check after countdown/before match now (not only min/max teams)
+* mapguard now never changes map if mastermode or lockmap is set
+
+Known bugs: none
+
+
+//kemiKal_sWeMoB

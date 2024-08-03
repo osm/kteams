@@ -1,0 +1,39 @@
+Kombat Teams 2.20 FFA version notes
+------------------------------------------------------------------------------
+
+Changes to old qw mod:
+
+* all the bugfixes of Kombat Teams (bunnyhop, lava & falling, telefrag, pack...)
+* KT SpawnSafety spawnmodel to avoid server crashes caused by telefrags
+* rapid-ized teleporter sound (fixed the delay)
+* check for timedemo & uptime bugs (uptime bug fix code by Zibbo)
+* some improvements to bad&slow code
+* players cannot fire during intermission - no ammo wasted
+* "scores" command shows remaining time & frags
+* new deathmessages added (optional - localinfo k_deathmsg 1 to turn them on)
+* player statistics printout & more stuff at the end of every round
+* "vote" command for mapchange; by majority vote, map is changed to next one
+* fun message commands. Explained:
+        You can set 2 strings via setinfo: premsg and postmsg.
+        Example: setinfo premsg "Hello "
+                 setinfo postmsg "!"
+        Then issuing the commands killer, victim or newcomer will put the name
+        of a player between these 2 strings and say it.
+* auto screenshot of scoreboard if k_flags set to 2 via setinfo
+* forced teamplay setting 0; this is an FFA mod, use KTeam for other matches :)
+* simple bot check for llama ffa'ers
+* oooo...
+
+Have fun :)
+
+For complete manual, refer to the Kombat Teams 2.20 documentation at:
+	http://www.barrysworld.com/kteam
+
+Technote: while the uptime bug check is pretty accurate imo, it is still
+possible that players might get undue warnings. However, it is very unlikely
+and the problem is caused by extreme lag (50-90% packetloss), thus the server
+is unplayable over that connection.
+
+Contact the authors at:
+	Cenobite (cenobite@barrysworld.com)
+	rc\sturm (silicon@inf.bme.hu)

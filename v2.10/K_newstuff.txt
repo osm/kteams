@@ -1,0 +1,71 @@
+Commands and settings for people using previous versions of the mod.
+--------------------------------------------------------------------
+
+The most important things changing are all the bugfixes implimented as well as the
+reduction in CPU usage (on average 50% less cpu) which means nearly twice as many
+servers at once :)  See below for list of the bugs fixed in this version.
+
+
+Bug Fixes
+===================
+* jump bug where you try to jump a second time and you dont jump but hear the sound. Basically
+	bunny hopping is made easier and you now no longer have to toggle cl_maxfps and rate.
+	Jimbob will be happy . . .
+* Telefrag bug.  You enter teleport after someone and person following gets telefragged.  
+	Changed the time from 0.2 to 0.1 so it behaves like normal QuakeWorld.
+* no team "" fix 
+* if you sit in lava and start duel you get damaged. Thanks to strider 
+* fixed the ability to use the timedemo bug. After 3 detections you are kicked on 4th.
+* fixed the null bug caused by stuffing too much at once and Qizmo getting narked.
+* fixed the bug where player animations became narked.
+* fixed problem on level change where you would Z_Alloc caused by stuffing the same aliases again.  
+	Caused by people not using large -zone.
+* packetlossplayer-startofmatch-allspotsfull-recieveammo fix
+* idlebot/forcematchstart now removes player properly.  No more full RL packs from ghost players 
+	kicked by either idlebot or an admin forcing start.
+
+
+New Player Commands
+===================
+/efficiency  : Shows players efficiences
+/stats       : Shows players statistics so far.
+/list        : Show all the players that are not ready.  Only once every 10 seconds
+/overtime    : Switch from overtime on to overtime off
+/overtimeup  : Change the overtime to extend.  Goes from 1 upto 10 then back to 1.
+
+
+setinfo k_flags 2 : Auto Screenshots scoreboard at end of game.
+
+
+
+New Admin Commands
+==================
+/powerups  : now has a 3rd setting to vary timer spawns.
+/forcekick : used for kicking and is very easy to use.
+/qpoint    : used to disable pointing on servers.
+
+
+
+New server side settings
+========================
+localinfo k_allowkick 0 or 1 : 0 is allowed and 1 disallowed
+localinfo k_maxrate xxxxx    : xxxxx is the maximum rate e.g 10000
+localinfo k_minrate xxxxx    : xxxxx is the minimum rate e.g 1500
+localinfo k_overtime 0 or 1  : 0 no overtime, 1 overtime added on at end game if draw
+localinfo k_exttime 1 to 10  : Time to extend if overtime is set.
+
+
+
+-- Possible suggestions by various people for next versions
+* overtime sudden death
+* /forceready admin command
+* voteadmin with k_allowvoteadmin 0/1 being checked.  This is _very_ debateable.
+* captains can choose teams by using code similiar to kick code that goes through players and asks if you want on team
+* auto-team chooser for biggame pickups
+* k_minping & k_maxping supported in server.cfg
+* average ping report and packetloss report at endgame. k_printpingreport 1
+
+
+//Cenobite
+
+cenobite@barrysworld.com
