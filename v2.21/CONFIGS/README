@@ -1,0 +1,11 @@
+These configs are examples. Edit them to suit your needs. Make sure you
+understand every option you change.
+
+In case you already have customized configs and don't want to overwrite then
+re-customize them, the changes to KTeam 2.20 configs are:
+
+* removed sv_maxtic line that caused slow rockets/grenades on win32 servers
+* upped maxrate to 18000
+* added k_noframechecks key to toggle timedemo/uptime bug checks on the server
+
+sv_mintic 0.013 should be still present in all server configs.
