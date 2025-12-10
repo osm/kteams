@@ -1,0 +1,302 @@
+2.0 BETA VERSION!!!!!!!!!
+
+KOMBAT TEAMS v2.0 updates
+-------------------------
+* new command /status2 gives info on qizmo features, spawntype, serverlock etc..
+* fixed a report function for k_membercount (it reports to the players when all are ready if
+  unsufficient teammembers)..
+* put in a min/max teamnumber check @ matchstart
+* players with ghosts are no longer allowed to join before setting their old team back...
+* new commands to support the new qizmo by the finnish brats zibbo and perkele (for admin specs too).
+* /silence also effects bit 6 on fpd (64 decimal).
+* Admins may use /silence during game
+* Start of match spawnfrag enhanced avoidance for Kombat Teams respawns and Avoid*2
+* Added spectator command /whoskin
+* More spectator admin power - change map, silence, tp/dm, timeup/down, spawn and powerups
+* 40 gameticks of respawnsafety after teleporting (kombat teams spawns)
+* No force-respawn prior to match
+* No gibs or bodies is thrown out prior to match (heads are left though (on telefrag))
+* Voting for map now needed.. (/dm4 for example casts a vote for map dm4)
+* A variety of spectator camera modes are now available (complete with statusbar et all).
+* Changed functionality of the countdown-start soundeffect code
+* Fixed /status printout in duelmode
+* Fixed a bug in an entity touch routine if touched pre-game (tested with the lamp in the e1m1
+  rocketlauncher room)
+* When 2 teams are battling, KT now appends the 2 teamnames to the hostname (temporarily)
+  in the form "servername (team1 vs. team2)"  (if more than 1 member of each team)
+* Added /scores command (shows teamscores during game - including ghostfrags)
+* Players can no longer fire during countdown
+* Extended custom maps support (see kombat.txt)
+* Majority vote fix
+* Lots of textchanges (finally i can stand looking at the commandlists :))
+* dmm4/dmm5 weapons removal at matchstart
+* New servervalue "k_btime". Decides how long before the end of the match berzerk mode
+  gets activated (in seconds)
+* Fixed a problem with forcestart/forcebreak
+
+
+KOMBAT TEAMS v1.99 updates
+--------------------------
+* 2 new player commands, /whonot and /whoskin (see kombat.txt)
+
+
+KOMBAT TEAMS v1.98 updates
+--------------------------
+* More textfixes
+* Teamgames affected by team min/max teamsettings can no longer be ruined by crossdressing.
+* New serverflag "k_master". Servers can now boot up in mastermode (see Kombat.txt)
+* The end-of-game-report now sort players into their respective teams.
+
+
+KOMBAT TEAMS v1.97 updates
+--------------------------
+* Respawn quickfix, nothing important
+* Added a new servervalue "k_defmap" (see kombat.txt)
+* Changed and added some texts (for example the duelmode have a different /rules text)
+* Added support for a new map - "aerowalk" by Preacher.
+* Fixed so that you cant use buttons and stuff before gamestart (the lavafloor on dm2 and
+  the shaftdoor on dm6 being what people were most annoyed by :))
+* Took away the "you have found a secret area" message. Learn them in singleplayer :)
+  Sound is still there though, so you (and those around you) will hear you trigger it.
+
+
+KOMBAT TEAMS v1.96 updates
+--------------------------
+* Did a ton of cleaning up code (layout-wise that is). Makes me feel better looking at it.
+  (commands, match, motd and admin are cleaned up. the team edits in the standard qc files
+   will be fixed later)
+* /ksound1 - /ksound6 plays sounds for your teammates (if they've got k_sound 1 set)
+  read more about it in kombat.txt
+* new user 
+* carried powerups gets printed with /report
+* ghost teams are now taken into account if teamlock is on (works better in duels now :))
+* teamnames are printed to the left of the playernames in the end-of-game report
+* dm4/dm5 fix
+* packed the information on /status to limit the need for scrolling the console..
+* after complaints from the office janitor oKKun - the "annoying" beeping countdown is
+  back to normal (white and no beep)
+* standard soundbanks ready for download at http://www.kemikal.com
+  many thanks to Olof Gustafsson and Sister Death for lending KT their voices
+  and Rodan and Sandman for help
+
+
+KOMBAT TEAMS v1.95 updates
+--------------------------
+* matchcounter infotexts presented as a chatstring (red and beep) 
+* adds disconnected players frags to end-of-match total
+* crossdresser check active, checks if a player has changed team and kicks him/her if so
+* fixed /reset so that it sets k_timetop to timelimit and sets teamplay 0 if k_duel is set to 1
+
+
+KOMBAT TEAMS v1.94 updates
+--------------------------
+* "not ready" in the /who list is now printed in red (easier to spot people not ready)
+* /report now looks like say_team instead of a say and is now renumbered from impulse 60 to 99
+* added one new serverflag:
+               - k_duel (duel server setting; see kombat.txt)
+* added two new servervalues:
+               - k_timetop (maximum time that can be allocated for one game)
+               - k_highspeed (the high value of the sv_maxspeed toggle)
+* /speed now toggles between 320 and k_highspeed
+* /about command is in (not in commandlist)
+* /silence command fixed
+* players frags and deaths are saved if the player exits during a game and restored upon reentry
+* /report and /fairpacks commands now fixed so that super shotgun is considered more powerful than
+  the nailgun
+* removed the "gets a frag for the other team" message because:
+               1. there may be more teams than 2 (so what is the OTHER team?)
+               2. it's a suicide message, yielding the player -1 and not a +1 on the other team
+* sourcecode no longer supplied.. this to make it tougher for serveradmins to cheat for their team.
+* fixed a teamcontrol bug
+* respawn bugfix
+* improved the looks of the menus (thanks to Slop :))
+* berzerk bug fixed
+
+
+KOMBAT TEAMS v1.93 updates
+--------------------------
+* spectators can now become masters
+* "random" command renamed to "spawn"
+* added one spawntype (see kombat.txt)
+* changed serverflag "k_rnd" to servervalue "k_spw"
+* repeated drop retries (don't ask)
+* new commands
+               - fairpacks (toggle k_frp 0/1)
+               - speed (toggle sv_maxspeed 320/370)
+* added two serverflags
+               - k_dm2mod (modified dm2 mode, see kombat.txt)
+               - k_frp (fairpacks on or off, see kombat.txt)
+
+
+KOMBAT TEAMS v1.92 updates
+--------------------------
+* new serverflag
+               - dp (backpack drop on or off)
+* new command
+               - droppack (toggle dp 0/1)
+* changed sourcecode extensions (the m4-compiled source is now named *.qc and the
+  original code with m4 macros *.q  (sourcecode is delivered in qc files)
+* fixed a bug in the admin code that could happen if an admin was entering his/her
+  code while the map changed..
+* removed support for the zerstörerdm1-5 maps
+
+
+KOMBAT TEAMS v1.91 updates
+--------------------------
+* removed warning message for qwcl < 2.1 and glqwcl on modelcheck.
+* most of the serverinfo's are now locals.
+
+
+KOMBAT TEAMS v1.9 updates
+-------------------------
+* put back "xxxx entered the game" message when someone connects during a game in progress.
+  (only the legal players)
+* fixed so that players get geared correctly when connecting to a dmm4 or dmm5 game
+  in progress.
+* the patch is back to dropping players instead of kicking them.
+* info added on mapchange on who changed it.
+* checks eye- and playermodels on connect and alert the other players if non-standard
+* new serverflag
+               - k_spectalk (this flag controls sv_spectalk during game)
+
+
+KOMBAT TEAMS v1.8 updates
+-------------------------
+* new commands added: time5, time10, time15, time20, time25 and time30
+  they set match-time accordingly..
+* the patch now kicks illegal players instead of disconnecting them
+  (accurate message)
+* added 1 spectator/player command
+               - who  (prints the playerlist that gives you info of what team each
+                       player is set to and whether they are admins or not)
+* removed playerlist from the "status" command.
+* admin status is now preserved after mapchange
+* command "powerup" renamed to the more correct "powerups"
+* after pressure from the office cult-character agorn and some injection of common sense,
+  the teamplay and deathmatch info on countdown was switched.
+* changed the output on some of the messages for clarification purposes
+
+
+KOMBAT TEAMS v1.7 updates
+-------------------------
+* the admin code is now 6 digits instead of 5
+* added 1 admin function
+               - master (toggle lock on all commands usually allowed to players.
+                         all admins become masters)
+* KT respawns fixed so that a player cant spawn on the same spot twice in a row.
+  (the standard qw respawns remain unchanged)
+* Fixed spawn666 and berzerk requadding (don't ask)..
+* Fixed so that players enter the game in solid form when game is not in progress
+  (to avoid telefrag avalanche when changing map)
+* Fixed so that no backpacks are dropped if game is not in progress
+* Exclusive mode allowed one player less than it was set to, meaning that if one
+  player got disconnected he couldnt rejoin, this is fixed..
+
+
+KOMBAT TEAMS v1.6 updates
+-------------------------
+* illegal players doesn't make sounds, aren't visible, aren't solid and doesn't emit
+  messages when entering or getting kicked.. should be invisible to the legal players
+  now..
+* telefragging before match now kills players (though no frags are awarded) so the
+  players don't get stuck on each other.
+* changed no spawn-target time to 60 ticks (see technical note)
+* 1 new server value:
+               - k_membercount (minimum number of players required in each team
+                                for countdown to commence.. 0 = whatever :)
+                                an admin forcestart overrides this however)
+* added info in countdown message:
+               - teamplay mode (doesn't print teamplay if 0)
+               - deathmatch mode
+               - timelimit (doesn't print timelimit if 0)
+               - fraglimit (doesn't print fraglimit if 0)
+               - "with powerups" or "no powerups"
+* added player-message for firing during pregame when k_prewar is off (not allowed to fire)
+* added teamplay 0
+
+
+KOMBAT TEAMS v1.5 updates
+-------------------------
+* !!!!BUGFIX: the command "respawn" has been changed to "random" in the actual command-
+  parsing too (not only in the commandlist :))
+* "report" output changed to mono-colored (like standard say_team from the FAQ-proxy)
+* description of the "report" output now removed from pre-game report. just outputs
+  your stats as it would during game
+* added the printout of frags for each player alongside his/hers rank at matchend
+  (in case you want to take a screenshot of it :))
+* added the short description of the "admin" command in "commands" (both player and spec)
+  but only for servers using k_admins 1
+* forcestart now (instead of kicking the players not ready and starting the match in an
+  instant) starts a 10 second countdown where players have a chance to ready themselves.
+  should they fail to do so, it's bye bye to them whilst the rest of the players get to
+  enjoy the (k_count) countdown :)
+* admins are now marked in "status"-list with a preceding "*"
+* fixed the k_exclusive flag
+* !!!!DISPLAYFIX: fixed the missing first second in countdown
+* oh, and the 2.10 server was released today. don't worry though as the QuakeC severcode
+  is identical to the 2.01 one, meaning that KTx.x works just fine with it :)
+
+
+KOMBAT TEAMS v1.4 updates
+-------------------------
+* fixed so that match ends if no players are connected
+* changed some flags and values to local instead of server
+* no longer outputs team "" 's score in finalscore..
+* fixed a couple of texts
+* added admin functions (check "commands" when you become an admin)
+               - forcestart (forces match to start and kicks players that aren't ready)
+               - forcebreak (forces matchend and prints the admins name in log)
+               - lockmap (toggles the k_lockmap flag)
+               - prewar (toggles the k_prewar flag)
+               - admin (toggles admin-mode)
+* 1 new server flag:
+               - k_admins (if you will permit admins, set it to 1)
+* 1 new server value:
+               - k_admincode (this is the 5 digit code to become an admin.
+                              DON'T USE THE DEFAULT!!! CHANGE IT!!!)
+* added the spectator command "commands" and all admin code for spectators as well..
+
+
+KOMBAT TEAMS v1.3 updates
+-------------------------
+* random-respawn fixed again
+* command name change!!:
+               - "respawn" is now "random"
+* 1 new server value:
+               - k_count (number of seconds the countdown lasts)
+* 1 new server flag:
+               - k_exclusive (KT checks amount of players at matchstart and won't allow
+                              any more players than that during the game.
+                              NOTE: players can still disconnect and reconnect)
+* new map: dapak9
+* the swedish chefs demanded that the biosuit stay a powerup, so it's a powerup again :)
+* KT no longer ends game if only 1 player remains (in a 1-1 the unfortunate player can
+  come back after a disconnect)..
+* No longer shows the MOTD on connect if game already is in progress (to players)
+* Logs a death for a player being telefragged by a teammate (Don't stand there :))
+* Plays soundeffect when countdown commences to alert players
+
+
+KOMBAT TEAMS v1.2 updates (from v1.1)
+-------------------------
+* the environment-suit can now be picked up even if powerups are disabled
+* random-respawns fixed
+* team-telefrags no longer counts
+* 4 new server flags:
+               - k_ann (announce spectators joining/leaving during match)
+               - k_kfp (kill plood protection (1 = on as in v1.1)
+               - k_lockmap  (if set to 1 the players won't be able to change map)
+               - k_sready  (players not ready glows during warmup)
+* 2 new server values:
+               - k_lockmin  (lock minimum number of teams in game)
+               - k_lockmax  (lock maximum number of teams in game)
+* new spectator commands:
+               /status
+               /join (same as typing: /spectator 0 and /reconnect)
+* report output changed to comply with that of the new FAQ-proxy
+* server-flagnames changed to be easier to recognise from qspy/gamespy
+* players not ready glows during warmup (if enabled by k_sready)
+* added spectator "message of the day"
+
+
+kemiKal_sWeMoB

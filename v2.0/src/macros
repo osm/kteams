@@ -1,0 +1,227 @@
+### change these if you want
+m4_define(`KTVERSION',`2.0 BETA')
+m4_define(MAX_DEAD_TIME,5)
+m4_define(SUICIDE_DELAY,10)
+
+### don't change these
+m4_define(IMP_REPORT,99)
+
+m4_define(LOCK_TEAM,1)
+m4_define(LOCK_ALL,2)
+
+m4_define(M_COUNTDOWN,1)
+m4_define(M_MATCH,2)
+
+########################################################################
+
+m4_define(`foreach', `m4_pushdef(`$1', `')_foreach(`$1', `$2',
+`$3')m4_popdef(`$1')')
+m4_define(`_arg1', `$1')
+m4_define(`_foreach', `m4_ifelse(`$2', `()', , `m4_define(`$1',
+_arg1$2)$3`'_foreach(`$1', (m4_shift$2), `$3')')')
+
+m4_define(`alias_imp', `stuffcmd(self.owner, "alias $1 \"impulse $2\"\n");')
+m4_define(`alias_imp2', `stuffcmd(self, "alias $1 \"impulse $2\"\n");')
+m4_define(`COLOR',`m4_translit($1,`0-9a-zA-Z.',`°±²³´µ¶·¸¹á-ùûÁ-Ú®')')
+
+m4_define(`multiline',`m4_patsubst($1,`
+',`\\n')')
+
+#
+# constants
+#
+
+m4_define(`FALSE',`0')
+m4_define(`TRUE',`1')
+
+# edict.flags
+m4_define(`FL_FLY',`1')
+m4_define(`FL_SWIM',`2')
+m4_define(`FL_CLIENT',`8')    # set for all client edicts
+m4_define(`FL_INWATER',`16')   # for enter / leave water splash
+m4_define(`FL_MONSTER',`32')
+m4_define(`FL_GODMODE',`64')   # player cheat
+m4_define(`FL_NOTARGET',`128')  # player cheat
+m4_define(`FL_ITEM',`256')  # extra wide size for bonus items
+m4_define(`FL_ONGROUND',`512')  # standing on something
+m4_define(`FL_PARTIALGROUND',`1024') # not all corners are valid
+m4_define(`FL_WATERJUMP',`2048') # player jumping out of water
+m4_define(`FL_JUMPRELEASED',`4096') # for jump debouncing
+
+# edict.movetype values
+m4_define(`MOVETYPE_NONE',`0')    # never moves
+#m4_define(`MOVETYPE_ANGLENOCLIP',`1')
+#m4_define(`MOVETYPE_ANGLECLIP',`2')
+m4_define(`MOVETYPE_WALK',`3')    # players only
+m4_define(`MOVETYPE_STEP',`4')    # discrete, not real time unless fall
+m4_define(`MOVETYPE_FLY',`5')
+m4_define(`MOVETYPE_TOSS',`6')    # gravity
+m4_define(`MOVETYPE_PUSH',`7')    # no clip to world, push and crush
+m4_define(`MOVETYPE_NOCLIP',`8')
+m4_define(`MOVETYPE_FLYMISSILE',`9')    # fly with extra size against monsters
+m4_define(`MOVETYPE_BOUNCE',`10')
+m4_define(`MOVETYPE_BOUNCEMISSILE',`11')   # bounce with extra size
+
+# edict.solid values
+m4_define(`SOLID_NOT',`0')    # no interaction with other objects
+m4_define(`SOLID_TRIGGER',`1')    # touch on edge, but not blocking
+m4_define(`SOLID_BBOX',`2')    # touch on edge, block
+m4_define(`SOLID_SLIDEBOX',`3')    # touch on edge, but not an onground
+m4_define(`SOLID_BSP',`4')    # bsp clip, touch on edge, block
+
+# range values
+m4_define(`RANGE_MELEE',`0')
+m4_define(`RANGE_NEAR',`1')
+m4_define(`RANGE_MID',`2')
+m4_define(`RANGE_FAR',`3')
+
+# deadflag values
+
+m4_define(`DEAD_NO',`0')
+m4_define(`DEAD_DYING',`1')
+m4_define(`DEAD_DEAD',`2')
+m4_define(`DEAD_RESPAWNABLE',`3')
+
+# takedamage values
+
+m4_define(`DAMAGE_NO',`0')
+m4_define(`DAMAGE_YES',`1')
+m4_define(`DAMAGE_AIM',`2')
+
+# items
+m4_define(`IT_AXE',`4096')
+m4_define(`IT_SHOTGUN',`1')
+m4_define(`IT_SUPER_SHOTGUN',`2')
+m4_define(`IT_NAILGUN',`4')
+m4_define(`IT_SUPER_NAILGUN',`8')
+m4_define(`IT_GRENADE_LAUNCHER',`16')
+m4_define(`IT_ROCKET_LAUNCHER',`32')
+m4_define(`IT_LIGHTNING',`64')
+m4_define(`IT_EXTRA_WEAPON',`128')
+
+m4_define(`IT_SHELLS',`256')
+m4_define(`IT_NAILS',`512')
+m4_define(`IT_ROCKETS',`1024')
+m4_define(`IT_CELLS',`2048')
+
+m4_define(`IT_ARMOR1',`8192')
+m4_define(`IT_ARMOR2',`16384')
+m4_define(`IT_ARMOR3',`32768')
+m4_define(`IT_SUPERHEALTH',`65536')
+
+m4_define(`IT_KEY1',`131072')
+m4_define(`IT_KEY2',`262144')
+
+m4_define(`IT_INVISIBILITY',`524288')
+m4_define(`IT_INVULNERABILITY',`1048576')
+m4_define(`IT_SUIT',`2097152')
+m4_define(`IT_QUAD',`4194304')
+
+# point content values
+
+m4_define(`CONTENT_EMPTY',`-1')
+m4_define(`CONTENT_SOLID',`-2')
+m4_define(`CONTENT_WATER',`-3')
+m4_define(`CONTENT_SLIME',`-4')
+m4_define(`CONTENT_LAVA',`-5')
+m4_define(`CONTENT_SKY',`-6')
+
+m4_define(`STATE_TOP',`0')
+m4_define(`STATE_BOTTOM',`1')
+m4_define(`STATE_UP',`2')
+m4_define(`STATE_DOWN',`3')
+
+m4_changequote(",")
+m4_define("VEC_ORIGIN","'0 0 0'")
+m4_define("VEC_HULL_MIN","'-16 -16 -24'")
+m4_define("VEC_HULL_MAX","'16 16 32'")
+
+m4_define("VEC_HULL2_MIN","'-32 -32 -24'")
+m4_define("VEC_HULL2_MAX","'32 32 64'")
+m4_changequote(`,')
+
+# protocol bytes
+m4_define(`SVC_TEMPENTITY',`23')
+m4_define(`SVC_SETPAUSE',`24')
+m4_define(`SVC_CENTERPRINT',`26')
+m4_define(`SVC_KILLEDMONSTER',`27')
+m4_define(`SVC_FOUNDSECRET',`28')
+m4_define(`SVC_INTERMISSION',`30')
+m4_define(`SVC_FINALE',`31')
+m4_define(`SVC_CDTRACK',`32')
+m4_define(`SVC_SELLSCREEN',`33')
+m4_define(`SVC_SMALLKICK',`34')
+m4_define(`SVC_BIGKICK',`35')
+m4_define(`SVC_UPDATEENTERTIME',`37')
+m4_define(`SVC_MUZZLEFLASH',`39')
+
+
+m4_define(`TE_SPIKE',`0')
+m4_define(`TE_SUPERSPIKE',`1')
+m4_define(`TE_GUNSHOT',`2')
+m4_define(`TE_EXPLOSION',`3')
+m4_define(`TE_TAREXPLOSION',`4')
+m4_define(`TE_LIGHTNING1',`5')
+m4_define(`TE_LIGHTNING2',`6')
+m4_define(`TE_WIZSPIKE',`7')
+m4_define(`TE_KNIGHTSPIKE',`8')
+m4_define(`TE_LIGHTNING3',`9')
+m4_define(`TE_LAVASPLASH',`10')
+m4_define(`TE_TELEPORT',`11')
+m4_define(`TE_BLOOD',`12')
+m4_define(`TE_LIGHTNINGBLOOD',`13')
+
+# sound channels
+# channel 0 never willingly overrides
+# other channels (1-7) allways override a playing sound on that channel
+m4_define(`CHAN_AUTO',`0')
+m4_define(`CHAN_WEAPON',`1')
+m4_define(`CHAN_VOICE',`2')
+m4_define(`CHAN_ITEM',`3')
+m4_define(`CHAN_BODY',`4')
+m4_define(`CHAN_NO_PHS_ADD',`8')    # ie: CHAN_BODY+CHAN_NO_PHS_ADD
+
+m4_define(`ATTN_NONE',`0')
+m4_define(`ATTN_NORM',`1')
+m4_define(`ATTN_IDLE',`2')
+m4_define(`ATTN_STATIC',`3')
+
+# update types
+
+m4_define(`UPDATE_GENERAL',`0')
+m4_define(`UPDATE_STATIC',`1')
+m4_define(`UPDATE_BINARY',`2')
+m4_define(`UPDATE_TEMP',`3')
+
+# entity effects
+
+#m4_define(`EF_BRIGHTFIELD',`1')
+#m4_define(`EF_MUZZLEFLASH',`2')
+m4_define(`EF_BRIGHTLIGHT',`4')
+m4_define(`EF_DIMLIGHT',`8')
+m4_define(`EF_FLAG1',`16')
+m4_define(`EF_FLAG2',`32')
+m4_define(`EF_BLUE',`64')
+m4_define(`EF_RED',`128')
+
+
+# messages
+m4_define(`MSG_BROADCAST',`0')            # unreliable to all
+m4_define(`MSG_ONE',`1')            # reliable to one (msg_entity)
+m4_define(`MSG_ALL',`2')            # reliable to all
+m4_define(`MSG_INIT',`3')            # write to the init string
+m4_define(`MSG_MULTICAST',`4')            # for multicast() call
+
+# message levels
+m4_define(`PRINT_LOW',`0')            # pickup messages
+m4_define(`PRINT_MEDIUM',`1')            # death messages
+m4_define(`PRINT_HIGH',`2')            # critical messages
+m4_define(`PRINT_CHAT',`3')            # also goes to chat console
+
+# multicast sets
+m4_define(`MULTICAST_ALL',`0')            # every client
+m4_define(`MULTICAST_PHS',`1')            # within hearing
+m4_define(`MULTICAST_PVS',`2')            # within sight
+m4_define(`MULTICAST_ALL_R',`3')            # every client, reliable
+m4_define(`MULTICAST_PHS_R',`4')            # within hearing, reliable
+m4_define(`MULTICAST_PVS_R',`5')            # within sight, reliable

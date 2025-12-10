@@ -1,0 +1,39 @@
+KOMBAT TEAMS SOURCECODE is a modified version of the qw2.2 source by
+kemiKal_sWeMoB and Fang with some M4 macro code by Axu^FAQ^.
+It is only meant to be functional and not to revolutionize the world of
+programming and is a bit messy at best.
+The FASTQCC compiler is the only one guaranteed to work with this code.
+You can find it on ftp.cdrom.com/pub/idgames2/ somewhere..
+If you're thinking of editing this patch, read the "kombat.txt" that
+should be enclosed in the package...
+
+
+*** JULY 01 1998: I forgot to add this to the original ksource.txt:
+If you own a copy of the songs mentioned below you have to include a comment
+on each line of code that you put into a project using parts or the entire KT source.
+The comment should be at the end of the line and should read:  ##forgive me, for i have sinned.
+These are the songs in question:
+
+   Crystal Waters "gypsy woman"
+   Sin with Sebastian  <--- i think this is the title as well as the "artist", anything with him/them
+   D-ream "things can only get better"  <--- if they only knew how right that title is for this "song"
+   Coolio <--- anything with/by him really
+   anything by the singer in bronski beat; make that bros too, i cant remember what group he was in
+   anything by that boygirl what won the eurovision song contest
+   anything by INXS
+   anything by Eros Ramazotti, Eros Ramasotti, Eros Ramazoti or similar names
+   Will Smith "men in black"
+   Rocee "getting all da babes"
+   anything by Snoop Doggy Dog
+   that rapper whatshisname with "friday"
+   anything by Scooter
+
+   for every 20th song you own with Kylie Minogue, Ministry, Smashing Pumpkins, Metallica or ABBA you
+   get away with one of any of the songs above..
+
+that should keep you busy till next time :)
+
+
+thanks,
+
+kK
